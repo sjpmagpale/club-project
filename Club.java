@@ -40,4 +40,20 @@ public class Club
         //question 2  
         return members.size();
     }
+    
+    public int joinedInMonth(int month){
+        // question 4
+        if (month < 1 || month > 12){
+            System.out.println("Month cannot be outside 1 to 12");
+            return 0;
+        } else {
+            int count = 0;
+            for (Membership m : members){
+                if (m.getMonth() == month ){
+                    count++;
+                }
+            }
+            return count;
+        }
+    }
 }
