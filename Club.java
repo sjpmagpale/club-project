@@ -56,4 +56,21 @@ public class Club
             return count;
         }
     }
+    
+    public ArrayList<Membership> purge (int month, int year){
+        // question 5
+        if (month < 1 || month > 12){
+            System.out.println("Month cannot be outside 1 to 12");
+            return null;
+        } else {
+            ArrayList<Membership> purgeList = new ArrayList<>();
+            for (Membership m : members){
+                if (m.getMonth() == month && m.getYear() == year){
+                    purgeList.add(m);
+                }
+            }
+            members.removeAll (purgeList);
+            return purgeList;
+        }
+    }
 }
